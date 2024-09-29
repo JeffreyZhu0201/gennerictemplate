@@ -1,0 +1,13 @@
+body {
+    /*设置距离屏幕的边距*/
+    margin: 0;
+    padding: 0;
+    /*    隐藏溢出 清除浮动*/
+    overflow: hidden;
+  }
+  /*把所有的元素变成盒状模型:应用“box-sizing: border-box;”样式后，盒子border和padding的参数值是被包含在width和height之内的。*/
+  * {
+    /*外边距不会额外占用1px的像素*/
+    box-sizing: border-box;
+  
+  }
