@@ -20,7 +20,12 @@ public class AdminController {
 
     @GetMapping("/alldata")
     public Result getData(){
-        return Result.success(adminService.GetAll());
+        if(adminService.GetAll().isEmpty()){
+            return Result.error("403","selected success but no admin",adminService.GetAll());
+        }
+        else{
+            return Result.success("400","selected success",adminService.GetAll());
+        }
     }
 
 
