@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface AdminService {
 
-    public  List<Admin> GetAll();
+    public List<Admin> GetAll();
 
 }
