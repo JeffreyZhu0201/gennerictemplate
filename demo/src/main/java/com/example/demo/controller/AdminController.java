@@ -26,18 +26,16 @@ public class AdminController {
     public Result getData() {
         List<Admin> admins = adminService.GetAll();
         if (admins.isEmpty()) {
-            return Result.error("403", "selected success but no admin", admins);
+            return Result.error("403", "Selected success but no admin", admins);
         } else {
             try {
                 if (admins.size() < 5) {
                     throw new CustomException(ResultCode.DATA_LESS);
                 }
-                return Result.success("400", "selected success", admins);
+                return Result.success("400", "Selected success", admins);
             }catch (Exception e){
-                return Result.error("403", "selected success but 5 admin", admins);
+                return Result.error("403", "Selected success but 5 admin", admins);
             }
         }
-
-
     }
 }

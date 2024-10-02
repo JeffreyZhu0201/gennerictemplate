@@ -2,8 +2,8 @@ package com.example.demo.entity;
 
 import javax.persistence.*;
 
-@Table(name = "Admin")
-public class Admin {
+@Table(name = "User")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

@@ -1,0 +1,38 @@
+/* 主要内容区背景样式*/
+.tabble_ground{
+    width: 100%;
+    height:1000px;
+    padding:40px 40px;
+    background-color: white;
+    border-radius: 4px;
+}
+/*  表格模块名*/
+.moudle_name{
+    margin-bottom: 40px;font-size: 18px;font-weight: 530;
+}
+/*输入框和按钮的父盒子样式*/
+.input_button{
+    margin-bottom: 20px;
+    display: flex;
+}
+/*输入框父盒子样式*/
+.input_box{
+    flex: 10;
+    text-align: left;
+}
+/*按钮父盒子样式*/
+.button_box{
+    flex:2;
+    text-align: right
+}
+/*输入框样式*/
+.input_left{
+    width: 20%;
+    margin-right: 20px
+}
+/*按钮样式*/
+.button_right{
+    border-radius: 1px;
+    width: 100px;
+    text-align: center
+}
