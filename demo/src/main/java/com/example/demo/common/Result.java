@@ -2,14 +2,29 @@ package com.example.demo.common;
 
 public class Result {
     //    静态属性
-    private static final String SUCCESS = "0";
-    private static final String ERROR = "-1";
+    private static final String SUCCESS = "400";
+    private static final String ERROR = "403";
 
     //    类的属性
     private String code;
     private String msg;
     private Object data;
 
+
+    Result(String code, String msg, Object data) {
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
+
+    Result(String code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
+    Result(){
+
+    }
 
     //    getter和setter方法
     public String getCode() {
@@ -59,4 +74,13 @@ public class Result {
         result.setMsg(msg);
         return result;
     }
+
+    public static Result success(String code,String msg,Object data){
+        return new Result(code,msg,data);
+    }
+
+    public static Result error(String code,String msg,Object data){
+        return new Result(code,msg,data);
+    }
+
 }

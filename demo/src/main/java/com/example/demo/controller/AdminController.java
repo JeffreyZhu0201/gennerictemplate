@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.common.Result;
 import com.example.demo.entity.Admin;
 import com.example.demo.service.AdminService;
 import jakarta.annotation.Resource;
@@ -18,8 +19,8 @@ public class AdminController {
 
 
     @GetMapping("/alldata")
-    public List<Admin> getData(){
-        return adminService.GetAll();
+    public Result getData(){
+        return Result.success(adminService.GetAll());
     }
 
 
