@@ -14,4 +14,7 @@ public interface AdminDao extends Mapper<Admin> {
 
     @Select("select * from admin where `userName` = #{userName}")
     Admin findByUsername(String userName);
+
+    @Select("select * from admin where `id` = #{id}")
+    Admin findById(Integer id);
 }

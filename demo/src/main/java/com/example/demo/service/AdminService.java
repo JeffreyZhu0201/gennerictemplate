@@ -13,6 +13,8 @@ public interface AdminService {
 
     public List<Admin> GetAll();
 
+    public Admin findById(Integer id);
+
     public Admin adminLogin(Admin admin);
 
     public Admin adminRegister(Admin admin);

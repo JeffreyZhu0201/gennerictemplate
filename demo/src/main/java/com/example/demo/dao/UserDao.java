@@ -13,4 +13,7 @@ public interface UserDao extends Mapper<User> {
 
     @Select("select * from user where `userName` = #{userName}")
     User findByUsername(String userName);
+
+    @Select("select * from user where `id` = #{id}")
+    User findById(Integer id);
 }

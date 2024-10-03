@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.common.Result;
+import com.example.demo.common.config.JwtTokenUtils;
 import com.example.demo.entity.Account;
 import com.example.demo.entity.Admin;
 import com.example.demo.entity.User;
@@ -9,6 +10,9 @@ import com.example.demo.service.UserService;
 import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
@@ -56,12 +60,14 @@ public class AccountController {
             BeanUtils.copyProperties(account,user);
             login = userService.userLogin(user);
         }
-        if(login != null){
-            return Result.success("200","登录成功!",login);
-        }
-        else {
-            return Result.error("登录失败!");
-        }
+        //        生成token
+        String token = JwtTokenUtils.genToken(login.getId() + "-" + login.getRole(), login.getPassword());
+        //        创建一个键值对map集合，把token和user塞进去，返回给前端
+        Map<String, Object> map = new HashMap<>();
+        map.put("token", token);
+        map.put("user", login);
+        return Result.success(map); //装好数据后，把map结合返回给前端
+
 
     }
 

@@ -25,6 +25,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findById(Integer id) {
+        return userDao.findById(id);
+    }
+
+    @Override
     public User userRegister(User user) {
         String userName = user.getUserName();
 

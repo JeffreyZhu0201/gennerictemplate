@@ -73,6 +73,10 @@ export default {
       // 如果角色标识为2，调用后用户登录的接口
       request.post('/account/login', this.form).then(res => {
         if (res.code === '200') {
+          let user = res.data.user;
+          let token = res.data.token;
+          localStorage.setItem("token",token);
+          localStorage.setItem("user",JSON.stringify(user))
           this.$notify.success("登录成功！");
           this.$router.push("/manager/home")
         } else {

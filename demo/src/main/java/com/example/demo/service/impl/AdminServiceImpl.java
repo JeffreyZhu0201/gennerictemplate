@@ -23,6 +23,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public Admin findById(Integer id) {
+        return adminDao.findById(id);
+    }
+
+    @Override
     public Admin adminLogin(Admin admin) {
         Admin dbAdmin = adminDao.findByUsername(admin.getUserName());
         if (ObjectUtil.isNotEmpty(dbAdmin) && dbAdmin.getPassword().equals(admin.getPassword())) {

@@ -11,6 +11,10 @@ public interface UserService {
 
     public List<User> GetAll();
 
+
+    public User findById(Integer id);
+
+
     public User userRegister(User user);
 
     public User userLogin(User user);
