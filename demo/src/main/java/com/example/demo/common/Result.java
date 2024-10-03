@@ -2,7 +2,7 @@ package com.example.demo.common;
 
 public class Result {
     //    静态属性
-    private static final String SUCCESS = "400";
+    private static final String SUCCESS = "200";
     private static final String ERROR = "403";
 
     //    类的属性

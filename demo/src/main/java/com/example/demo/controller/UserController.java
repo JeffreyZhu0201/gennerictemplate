@@ -37,10 +37,4 @@ public class UserController {
         }
     }
 
-
-    @PostMapping("/register")
-    public Result userRegister(@RequestBody User user){
-        return userService.userRegister(user);
-    }
-
 }

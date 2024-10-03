@@ -11,5 +11,7 @@ public interface UserService {
 
     public List<User> GetAll();
 
-    public Result userRegister(User user);
+    public User userRegister(User user);
+
+    public User userLogin(User user);
 }

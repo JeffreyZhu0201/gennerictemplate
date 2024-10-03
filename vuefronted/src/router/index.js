@@ -10,11 +10,14 @@ const routes = [
         children: [
             {path: 'home', component: () => import('../views/manager/HomeView.vue'),},
             {path: 'admin', component: () => import('../views/manager/Admin.vue')},
-            {path:'user',component: () => import('../views/manager/User.vue'),},
+            {path: 'user', component: () => import('../views/manager/User.vue'),},
         ]
     },
     {
-        path:'/register',name: 'register',component:()=>import('@/views/Register.vue')
+        path: '/register', name: 'register', component: () => import('@/views/Register.vue'),
+    },
+    {
+        path: '/login', name: 'login', component: () => import('@/views/Login.vue')
     }
 ]
 
