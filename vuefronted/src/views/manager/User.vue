@@ -1,5 +1,5 @@
 <template>
-  <div class="tabble_ground">
+  <div class="tabble_ground" style="height: auto">
     <div class="moudle_name">用户管理</div>
     <div class="input_button">
       <div class="input_box">
@@ -54,7 +54,7 @@ export default {
     },
     load(){
       request.get("/user/alldata").then(res =>{
-        if (res.code === '0'){
+        if (res.code === '400'){
           this.tableData = res.data;
         } else {
           this.$notify.error(res.msg)

@@ -1,13 +1,11 @@
 <template>
   <div style="width: 100%;height:1000px;padding:40px 40px; background-color: white;border-radius: 4px">
+    <div class="moudle_name">管理员管理</div>
     <el-table :data="tableData" border fit stripe style="width: 100%" :cell-style="{ textAlign: 'center' }"
               :header-cell-style="{ textAlign: 'center' }">
 <!--      <el-table-column prop="date" label="日期"></el-table-column>-->
       <el-table-column prop="id" label="id"></el-table-column>
       <el-table-column prop="userName" label="姓名"></el-table-column>
-<!--      <el-table-column prop="province" label="省份"></el-table-column>-->
-<!--      <el-table-column prop="city" label="市区"></el-table-column>-->
-<!--      <el-table-column prop="address" label="地址"></el-table-column>-->
       <el-table-column prop="phone" label="电话"></el-table-column>
       <el-table-column prop="password" label="密码"></el-table-column>
       <el-table-column prop="age" label="年龄"></el-table-column>
@@ -51,7 +49,7 @@ export default {
       console.log(`当前页: ${val}`);
     },
     load(){
-      request.get("admin/alldata").then((res) => {
+      request.get("/admin/alldata").then((res) => {
         if(res.code === '400'){
           this.tableData = res.data;
         }
