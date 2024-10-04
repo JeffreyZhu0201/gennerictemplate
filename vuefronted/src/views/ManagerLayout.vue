@@ -2,7 +2,7 @@
   <div>
     <el-container style="height: 100vh;">
       <el-aside width="200px" style="background-color: rgb(238, 241, 246);min-height: 100vh">
-        <el-menu class="el-menu" :default-active="$route.path" router >
+        <el-menu class="el-menu" :default-active="$route.path" router>
           <el-menu-item index="/manager/home">系统首页</el-menu-item>
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-eleme"></i>角色管理</template>
@@ -54,9 +54,16 @@
               <el-dropdown-item>查看</el-dropdown-item>
               <el-dropdown-item>新增</el-dropdown-item>
               <el-dropdown-item>删除</el-dropdown-item>
+              <div @click="logout()">
+                <el-dropdown-item>退出登录</el-dropdown-item>
+              </div>
+
             </el-dropdown-menu>
           </el-dropdown>
-          <span>王小虎</span>
+          <span style="color: #4c5a73;font-weight: bold;font-size: 14px;margin-right: 20px">欢迎您，{{
+              user.userName
+            }}</span>
+
         </el-header>
 
         <el-main>
@@ -68,14 +75,28 @@
 </template>
 
 <script>
-import "@/assets/manager.css"
-export default {
-  data() {
-  return{
+import request from "@/utils/request";
 
+export default {
+  name: "ManagerLayout",
+
+  data () {
+    return {
+      // 定义User对象，从缓存里取值
+      user: JSON.parse(localStorage.getItem("user") || {}),
+    }
+  },
+
+
+  methods: {
+// 退出登录方法
+    logout() {
+      localStorage.removeItem("user");
+      this.$router.push("/login");
+    }
   }
-  }
-};
+
+}
 </script>
 
 <style>
